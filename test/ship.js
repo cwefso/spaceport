@@ -28,7 +28,7 @@ describe('Ship', function() {
     assert.equal(shuttle.type, 'cargo');
   })
 
-  it.skip('may not have an invalid designation', function() {
+  it('may not have an invalid designation', function() {
     var fighter = new Ship({name: 'Atlantis', type: 'military'});
     var invalid1 = new Ship({name: 'Toy', type: 'wooden'});
     var invalid2 = new Ship({name: 'Toy2', type: 'tin'});
@@ -64,7 +64,7 @@ describe('Ship', function() {
     assert.equal(fighter.odometer, 0);
   })
 
-  it.skip('can be initialized with a odometer reading', function() {
+  it('can be initialized with a odometer reading', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -77,7 +77,7 @@ describe('Ship', function() {
     assert.equal(fighter.odometer, 3340);
   })
 
-  it.skip('has a fuel capacity of 10 by default', function() {
+  it('has a fuel capacity of 10 by default', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -90,7 +90,7 @@ describe('Ship', function() {
     assert.equal(fighter.fuelCapacity, 10);
   })
 
-  it.skip('can be initialized with a different fuel capacity', function() {
+  it('can be initialized with a different fuel capacity', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -104,7 +104,7 @@ describe('Ship', function() {
     assert.equal(fighter.fuelCapacity, 2000);
   })
 
-  it.skip('has no fuel by defualt', function() {
+  it('has no fuel by defualt', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -117,7 +117,7 @@ describe('Ship', function() {
     assert.equal(fighter.fuel, 0);
   })
 
-  it.skip('has a captain', function() {
+  it('has a captain', function() {
     var captain = new Being('Will', 'human');
     var fighter = new Ship(
       {
@@ -133,7 +133,7 @@ describe('Ship', function() {
     assert.instanceOf(fighter.captain, Being);
   })
 
-  it.skip('has no crew by default', function() {
+  it('has no crew by default', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -146,7 +146,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, []);
   })
 
-  it.skip('can add multiple crew members', function() {
+  it('can add multiple crew members', function() {
     var crewmember = new Being('Zot', 'krill');
     var droid = new Being('R2-D2', 'droid');
     var fighter = new Ship(
@@ -207,7 +207,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, expectedCrew);
   })
 
-  it.skip('can not add something other than a being into the crew', function() {
+  it('can not add something other than a being into the crew', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -223,7 +223,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, []);
   })
 
-  it.skip('has no cargo by default', function() {
+  it('has no cargo by default', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -236,7 +236,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.cargo, []);
   })
 
-  it.skip('can load cargo', function() {
+  it('can load cargo', function() {
     var partCargo = new Part({name: 'Dell', type: 'computer', value: 100});
     var fighter = new Ship(
       {
@@ -252,7 +252,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.cargo, [partCargo]);
   })
 
-  it.skip('can only load Part cargo', function() {
+  it('can only load Part cargo', function() {
     var partCargo = new Part({name: 'Dell', type: 'computer', value: 100});
     var fighter = new Ship(
       {
@@ -271,7 +271,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.cargo, [partCargo]);
   })
 
-  it.skip('has an empty parts list by default', function() {
+  it('has an empty parts list by default', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -284,7 +284,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.parts, {});
   })
 
-  it.skip('can be initialized with parts', function() {
+  it('can be initialized with parts', function() {
     var parts = {
       shell: new Part({ name: 'XC-Wing', type: 'shell', value: 8000 }),
       computer: new Part({ name: 'Starmapper', type: 'computer', value: 300 }),
